@@ -1,4 +1,4 @@
-class TabPanel extends HTMLElement {
+export class TabPanel extends HTMLElement {
 
     lastPanelIndex = 0;
 
