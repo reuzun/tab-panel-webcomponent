@@ -1,6 +1,5 @@
 class TabPanel extends HTMLElement {
 
-    panels = [];
     lastPanelIndex = 0;
 
     constructor() {
@@ -28,25 +27,41 @@ class TabPanel extends HTMLElement {
                 </div>
             `;
 
-            this.shadowRoot.querySelector("#container").style.width =
-                this.getAttribute("width") ?? "400px";
-            this.shadowRoot.querySelector("#container").style.height = 
-                this.getAttribute("height") ?? "400px";
+            const container = this.shadowRoot.querySelector("#container");
+            const panels = this.querySelectorAll(".panel");
+            const buttons = this.querySelectorAll(".button");
 
-            this.panels = this.querySelectorAll(".panel");
+            this.setAttributesByInputs(
+                container,
+                this.getAttribute("width") ?? "400px",
+                this.getAttribute("height") ?? "400px"
+            );
 
-            this.querySelectorAll(".button")
-                .forEach((val, indx) => {
-                    if (indx != 0) {
-                        this.panels[indx].style.display = "none";
-                    }
-                    val.onclick = () => {
-                        this.panels[this.lastPanelIndex].style.display = "none";
-                        this.panels[indx].style.display = "block";
-                        this.lastPanelIndex = indx;
-                    }
-                });
+            this.attachEventToButtons(buttons, panels);
         });
+    }
+
+    attachEventToButtons(buttons, panels) {
+        buttons
+            .forEach((val, index) => {
+                if (index != 0) {
+                    panels[index].style.display = "none";
+                }
+                val.onclick = () => {
+                    this.lastPanelIndex = this.changeTab(panels, index, this.lastPanelIndex);
+                }
+            });
+    }
+
+    setAttributesByInputs(element, width, height) {
+        element.style.width = width;
+        element.style.height = height;
+    }
+
+    changeTab(panels, index, lastIndex) {
+        panels[lastIndex].style.display = "none";
+        panels[index].style.display = "block";
+        return index;
     }
 }
 window.customElements.define('tab-panel', TabPanel);
