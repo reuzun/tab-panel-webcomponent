@@ -7,7 +7,14 @@
     "build:prod": "webpack --mode production",
     "test": "karma start",
     "test:ci": "karma start --browsers ChromeHeadless --singleRun",
-    "publish": "semantic-release --ci false"
+    "publish": "semantic-release --ci false",
+    "commit": "cz",
+    "publish:test": "npm pack"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
   },
   "keywords": [
     "tabpanel",
@@ -18,6 +25,14 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@commitlint/cz-commitlint": "^16.2.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/npm": "^9.0.1",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "commitizen": "^4.2.4",
+    "husky": "^4.0.0",
     "jasmine-core": "~3.10.1",
     "jasmine-spec-reporter": "~7.0.0",
     "karma": "^6.4.1",
@@ -29,9 +44,6 @@
     "karma-junit-reporter": "^2.0.1",
     "karma-spec-reporter": "0.0.36",
     "semantic-release": "^19.0.5",
-    "@semantic-release/commit-analyzer": "^9.0.2",
-    "@semantic-release/npm": "^9.0.1",
-    "@semantic-release/release-notes-generator": "^10.0.3",
     "string-replace-loader": "^3.1.0",
     "terser-webpack-plugin": "^5.3.6",
     "webpack": "^5.75.0",
@@ -40,6 +52,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/reuzun/tab-panel-webcomponent"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:ci"
+    }
   },
   "release": {
     "plugins": [

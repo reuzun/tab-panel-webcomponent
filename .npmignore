@@ -1,8 +1,7 @@
 artifacts
 coverage
-package.json
-README.md
-LICENSE
+.husky
+commitlint.config.js
 node_modules
 spec
 src
