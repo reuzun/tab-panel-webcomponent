@@ -36,13 +36,7 @@ module.exports = function (config) {
             dir: require('path').join(__dirname, './artifacts/coverage'),
             subdir: '.',
             reporters: [
-              { type: 'html' },
-              { type: 'lcov' },
               { type: 'text-summary' },
-              {
-                type : 'cobertura',
-                file : 'cobertura-coverage.xml'
-              }
             ],
           },
     });

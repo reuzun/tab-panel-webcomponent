@@ -1,0 +1,15 @@
+{
+    "name": "@reuzun/tabpanel-webcomponent",
+    "version": "0.0.2",
+    "description": "A native tab-panel web component.",
+    "scripts": {},
+    "keywords": [
+        "tabpanel",
+        "tab-panel",
+        "tab"
+    ],
+    "author": "reuzun",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {}
+}

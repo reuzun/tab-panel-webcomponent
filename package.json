@@ -1,11 +1,12 @@
 {
-  "name": "Tab-Panel-WebComponent",
+  "name": "@reuzun/tabpanel-webcomponent",
   "version": "0.0.1",
   "description": "A native tab-panel web component.",
   "scripts": {
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
-    "test": "karma start"
+    "test": "karma start",
+    "publish": "semantic-release --ci false"
   },
   "keywords": [
     "tabpanel",
@@ -26,9 +27,32 @@
     "karma-jasmine-html-reporter": "^1.7.0",
     "karma-junit-reporter": "^2.0.1",
     "karma-spec-reporter": "0.0.36",
+    "semantic-release": "^19.0.5",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/npm": "^9.0.1",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "string-replace-loader": "^3.1.0",
     "terser-webpack-plugin": "^5.3.6",
     "webpack": "^5.75.0",
     "webpack-cli": "^4.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reuzun/tab-panel-webcomponent"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "src"
+        }
+      ]
+    ],
+    "branches": [
+      "main"
+    ]
   }
 }
