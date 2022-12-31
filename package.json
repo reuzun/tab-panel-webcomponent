@@ -7,7 +7,14 @@
     "build:prod": "webpack --mode production",
     "test": "karma start",
     "test:ci": "karma start --browsers ChromeHeadless --singleRun",
-    "publish": "semantic-release --ci false"
+    "publish": "semantic-release --ci false",
+    "commit": "cz",
+    "publish:test": "npm pack"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
   },
   "keywords": [
     "tabpanel",
@@ -35,7 +42,12 @@
     "string-replace-loader": "^3.1.0",
     "terser-webpack-plugin": "^5.3.6",
     "webpack": "^5.75.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@commitlint/cz-commitlint": "^16.2.1",
+    "commitizen": "^4.2.4",
+    "husky": "^7.0.0"
   },
   "repository": {
     "type": "git",
