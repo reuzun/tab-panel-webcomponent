@@ -1,5 +1,8 @@
 artifacts
 coverage
+package.json
+README.md
+LICENSE
 node_modules
 spec
 src
@@ -10,6 +13,4 @@ TESTS-Ch*
 webpack.config.js
 demo
 .github
-package.json
-README.md
-LICENSE
+
