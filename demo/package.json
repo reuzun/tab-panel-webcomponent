@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@reuzun/tabpanel-webcomponent": "^3.2.2"
+    "@reuzun/tabpanel-webcomponent": "latest"
   }
 }
