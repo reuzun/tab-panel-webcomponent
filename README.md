@@ -12,6 +12,21 @@ npm install @reuzun/tabpanel-webcomponent
 # How to use?
 ```html
 <script src="./node_modules/@reuzun/tabpanel-webcomponent/dist/tab-panel.js"></script>
+<tab-panel>
+    <anything slot="button"></anything>
+    <anything slot="content"></anything>    
+    <anything slot="button"></anything>
+    <anything slot="content"></anything>
+</tab-panel>
+
+<tab-panel>
+    <anything slot="button"></anything>
+    <anything slot="button"></anything>
+    <anything slot="button"></anything>
+    <anything slot="content"></anything>
+    <anything slot="content"></anything>
+    <anything slot="content"></anything>
+</tab-panel>
 ```
 
 # How to run demo?

@@ -28,8 +28,8 @@ export class TabPanel extends HTMLElement {
             `;
 
             const container = this.shadowRoot.querySelector("#container");
-            const panels = this.querySelectorAll(".panel");
-            const buttons = this.querySelectorAll(".button");
+            const panels = this.querySelectorAll("[slot='content']");
+            const buttons = this.querySelectorAll("[slot='button']");
 
             this.setAttributesByInputs(
                 container,
