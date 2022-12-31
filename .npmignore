@@ -9,3 +9,4 @@ package-lock.json
 TESTS-Ch*
 webpack.config.js
 demo
+.github
