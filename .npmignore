@@ -1,0 +1,11 @@
+artifacts
+coverage
+node_modules
+spec
+src
+.gitignore
+karma.conf.js
+package-lock.json
+TESTS-Ch*
+webpack.config.js
+demo

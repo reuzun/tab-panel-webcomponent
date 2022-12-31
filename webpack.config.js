@@ -4,8 +4,8 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = {
     entry: "./src/tab-panel.js",
     output: {
-        path: path.resolve(__dirname, "src/dist"),
-        filename: "tab-panel-dist.js",
+        path: path.resolve(__dirname, "dist"),
+        filename: "tab-panel.js",
         clean: true
     },
     optimization: {

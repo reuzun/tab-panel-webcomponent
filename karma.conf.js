@@ -3,7 +3,7 @@ module.exports = function (config) {
         basePath: "",
         frameworks: ["jasmine"],
         files: [
-            { pattern: "./src/*.spec.js", type: "module", included: true },
+            { pattern: "./spec/*.spec.js", type: "module", included: true },
             { pattern: "./src/*.js", type: "module", included: false },
         ],
         plugins: [
