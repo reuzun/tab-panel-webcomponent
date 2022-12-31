@@ -5,7 +5,11 @@ A tab panel component with allowing limitless panels without any content restric
 ![image](https://user-images.githubusercontent.com/73116832/209718725-211336f9-1a86-4a8e-a7c3-29eb16874951.png)
 
 # How to install?
-Coming soon.
+```
+npm install @reuzun/tabpanel-webcomponent
+```
 
 # How to use?
-Coming soon.
+```html
+<script src="./node_modules/@reuzun/tabpanel-webcomponent/dist/tab-panel.js"></script>
+```
