@@ -53,6 +53,11 @@
     "type": "git",
     "url": "https://github.com/reuzun/tab-panel-webcomponent"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:ci"
+    }
+  },
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
