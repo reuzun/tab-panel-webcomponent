@@ -2,9 +2,7 @@
 
 A light-weight tab panel component with allowing limitless panels without any content restriction.
 
-size - 1.92KiB
-
-![image](https://user-images.githubusercontent.com/73116832/209718725-211336f9-1a86-4a8e-a7c3-29eb16874951.png)
+Size - 1.92KiB
 
 # How to install?
 ```
@@ -25,7 +23,7 @@ Nth button changes content to Nth content.
     <anything slot="content"></anything>
 </tab-panel>
 
-<tab-panel width="300px" height="700px" horizontal>
+<tab-panel width="300px" height="700px" direction="rtl">
     <anything slot="content"></anything>    
     <anything slot="content"></anything>
     <anything slot="button"></anything>
@@ -39,7 +37,7 @@ Nth button changes content to Nth content.
 | --- | --- | --- | --- |
 | `width` | Width of the tab-panel | 400px | Same with css.
 | `height` | Width of the tab-panel | 400px | Same with css.
-| `direction` | Direction of buttons to Content | 'ltr' | 'ltr', 'rtl', 'ttb', 'btt'
+| `direction` | Direction of buttons to Content | 'ttb' | 'ltr', 'rtl', 'ttb', 'btt'
 
 
 | ltr | rtl | ttb | btt|
