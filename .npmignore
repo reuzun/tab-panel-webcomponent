@@ -10,3 +10,6 @@ TESTS-Ch*
 webpack.config.js
 demo
 .github
+package.json
+README.md
+LICENSE
