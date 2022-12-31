@@ -1,3 +1,10 @@
+const STYLES = {
+    LTR: 'flex-row pad-left',
+    RTL: 'flex-row-reverse pad-right',
+    TTB: 'flex-col pad-top',
+    BTT: 'flex-col-reverse pad-bottom'
+}
+
 export class TabPanel extends HTMLElement {
 
     lastPanelIndex = 0;
@@ -8,20 +15,67 @@ export class TabPanel extends HTMLElement {
 
     connectedCallback() {
         this.attachShadow({ mode: 'open' });
-        const isHorizontal = this.hasAttribute("horizontal");
+        const direction = this.getAttribute("direction") ?? "ttb";
+
+        const DirectionCssRule =
+            direction == "ltr" ? STYLES.LTR :
+                direction == "rtl" ? STYLES.RTL :
+                    direction == "ttb" ? STYLES.TTB :
+                        direction == "btt" ? STYLES.BTT : STYLES.TTB;
+
         setTimeout(() => {
             this.shadowRoot.innerHTML = `
                 <style>
                     :host{
                         overflow: auto;
                     }
+                    .flex-row-reverse > div:nth-child(1) > div,
+                    .flex-row > div:nth-child(1) > div
+                    {
+                        display:flex;
+                        flex-direction: column;
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                    }
+                    .flex-col-reverse > div:nth-child(1) > div,
+                    .flex-col > div:nth-child(1) > div
+                    {
+                        display:flex;
+                        flex-direction: row;
+                        overflow-x: auto;
+                        overflow-y: auto;
+                    }
                     .flex-row{
                         display:flex;
                         flex-direction: row;
+                        overflow: hidden;
+                    }
+                    .flex-row-reverse{
+                        display:flex;
+                        flex-direction: row-reverse;
+                        overflow: hidden;
                     }
                     .flex-col{
                         display:flex;
                         flex-direction: column;
+                        overflow: hidden;
+                    }
+                    .flex-col-reverse{
+                        display:flex;
+                        flex-direction: column-reverse;
+                        overflow: hidden;
+                    }
+                    .pad-left > div:nth-child(2){
+                        padding-left: 1rem;
+                    }
+                    .pad-right > div:nth-child(2){
+                        padding-right: 1rem;
+                    }
+                    .pad-top > div:nth-child(2){
+                        padding-top: 1rem;
+                    }
+                    .pad-bottom > div:nth-child(2){
+                        margin-bottom: 1rem;
                     }
                     .stick-top-left{
                         background-color: white; 
@@ -30,13 +84,13 @@ export class TabPanel extends HTMLElement {
                         left: 0; 
                     }
                 </style>
-                <div id="container" class="${isHorizontal?'flex-row':'flex-col'}">
-                    <div style="padding-bottom: ${!isHorizontal?'1rem':''};">
-                        <div class="${isHorizontal?'flex-col':'flex-row'} stick-top-left" style="white-space: nowrap;overflow: auto; height: 100%; ${isHorizontal?'overflow-x:hidden':''} ">
+                <div id="container" class="${DirectionCssRule}">
+                    <div>
+                        <div class="stick-top-left" style="white-space: nowrap; height: 100%;">
                             <slot name="button"></slot>
                         </div>
                     </div>
-                    <div style="overflow-x: auto; padding-left:${isHorizontal?'1rem':''};">
+                    <div style="overflow-x: auto; height: 100%">
                         <slot name="content"></slot>
                     </div>
                 </div>
