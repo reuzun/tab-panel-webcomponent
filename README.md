@@ -13,3 +13,15 @@ npm install @reuzun/tabpanel-webcomponent
 ```html
 <script src="./node_modules/@reuzun/tabpanel-webcomponent/dist/tab-panel.js"></script>
 ```
+
+# How to run demo?
+
+```
+cd demo
+npm install
+```
+
+* open demo.html
+
+# LICENSE
+Licensed under [MIT License](LICENSE).
