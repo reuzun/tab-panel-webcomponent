@@ -64,8 +64,8 @@ describe("Tab-Panel Component", () => {
         const panel1 = document.createElement("div");
         const panel2 = document.createElement("div");
 
-        panel1.classList.add("panel");
-        panel2.classList.add("panel");
+        panel1.setAttribute("slot", "content");
+        panel2.setAttribute("slot", "content");
 
         panel1.innerHTML = `<div>Hello World!</div>`
         panel2.innerHTML = `<div>Good Bye!</div>`
@@ -73,8 +73,8 @@ describe("Tab-Panel Component", () => {
         const button1 = document.createElement("button");
         const button2 = document.createElement("button");
 
-        button1.classList.add("button");
-        button2.classList.add("button");
+        button1.setAttribute("slot", "button");
+        button2.setAttribute("slot", "button");
 
         tabPanel.appendChild(panel1);
         tabPanel.appendChild(panel2);
