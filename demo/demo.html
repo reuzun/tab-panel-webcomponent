@@ -6,39 +6,135 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./node_modules/@reuzun/tabpanel-webcomponent/dist/tab-panel.js"></script>
+    <script src="../dist/tab-panel.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body class="container container-fluid d-flex justify-content-around pt-3">
+    <div style="display: flex; flex-direction: column;">
+        <h1>My Tab-Panel</h1>
+        <tab-panel width="700px" height="300px" horizontal>
+            <button slot="button" class="btn btn-primary">
+                Information
+            </button>
+            <div slot="content">
+                What is Lorem Ipsum?
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into
+                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
 
-    <tab-panel width="700px" height="300px">
-        <button slot="button" class="btn btn-primary">
-            Information
-        </button>
-        <div slot="content">
-            What is Lorem Ipsum?
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-            into
-            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-            release of
-            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-            Aldus PageMaker including versions of Lorem Ipsum.
-        </div>
+            <button slot="button" class="btn btn-primary">
+                Test1
+            </button>
 
-        <button slot="button" class="btn btn-primary">
-            Images
-        </button>
-        <div slot="content">
-            <div>Hello Software!</div>
-            <img
-                src="https://media.istockphoto.com/id/1283504873/photo/mosque-and-bosphorus-bridge.jpg?b=1&s=170667a&w=0&k=20&c=D5AwrHMbPX8u4MUXYPx3dlCAz0KeKclxq9CJqSTmJ10=">
-        </div>
-    </tab-panel>
+            <div slot="content">
+                <div>Hello Software!</div>
+                <img
+                    src="https://media.istockphoto.com/id/1283504873/photo/mosque-and-bosphorus-bridge.jpg?b=1&s=170667a&w=0&k=20&c=D5AwrHMbPX8u4MUXYPx3dlCAz0KeKclxq9CJqSTmJ10=">
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+                <div>Hello Software!</div>
+    
+            </div>
+
+            <button slot="button" class="btn btn-primary">
+                Test1
+                Test1
+                Test1
+            </button>
+
+            <button slot="button" class="btn btn-primary">
+                1
+            </button>
+
+            <button slot="button" class="btn btn-primary">
+                2
+            </button>
+
+            <button slot="button" class="btn btn-primary">
+                3
+            </button>
+
+            <button slot="button" class="btn btn-primary">
+                4
+            </button>
+
+            <button slot="button" class="btn btn-primary">
+                5
+            </button>
+
+            <button slot="button" class="btn btn-primary">
+                6
+            </button>
+
+            <button slot="button" class="btn btn-primary">
+                7
+            </button>
+
+            <div slot="content">
+                2
+            </div>
+
+            <div slot="content">
+                3
+            </div>
+
+            <div slot="content">
+                4
+            </div>
+
+            <div slot="content">
+                5
+            </div>
+
+            <div slot="content">
+                6
+            </div>
+
+            <div slot="content">
+                7
+            </div>
+
+            <div slot="content">
+                8
+            </div>
+
+            <div slot="content">
+                9
+            </div>
+
+        </tab-panel>
+    </div>
+
 
     <tab-panel width="300px" height="700px">
         <button slot="button" class="btn btn-primary">
