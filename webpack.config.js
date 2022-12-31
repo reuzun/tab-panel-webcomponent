@@ -5,7 +5,7 @@ module.exports = {
     entry: "./src/tab-panel.js",
     output: {
         path: path.resolve(__dirname, "src/dist"),
-        filename: "main.js",
+        filename: "tab-panel.js",
         clean: true
     },
     optimization: {

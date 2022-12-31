@@ -1,6 +1,6 @@
 {
     "name": "@reuzun/tabpanel-webcomponent",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "A native tab-panel web component.",
     "scripts": {},
     "keywords": [
@@ -13,6 +13,6 @@
     "dependencies": {},
     "devDependencies": {},
     "publishConfig": {
-      "access": "public"
+        "access": "public"
     }
 }
