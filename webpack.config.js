@@ -28,13 +28,14 @@ module.exports = {
                 test: /.*/,
                 loader: 'string-replace-loader',
                 options: {
-                    search: /\`[\s\\n\na-zA-Z<>:{;}\/="-1-9]*\`/g,
+                    search: /(?<=`)[\s\n<a-zA-Z>:{;}.-0-9="$?'!1%]*(?=`;)/g,
                     replace(match, p1, offset, string) {
-                        // console.log(`Replace "${match}" in file "${this.resource}".`)
                         const val = match.replace(/\n/g, "")
                             .replace(/\s/g, "")
                             .replace(/div/g, "div ")
-                            .replace(/slot/g, "slot ");
+                            .replace(/slot/g, "slot ")
+                            .replace(/flex-col/g, "flex-col ")
+                            .replace(/flex-row/g, "flex-row ");
                         return val
                     },
                 }

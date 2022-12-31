@@ -8,21 +8,36 @@ export class TabPanel extends HTMLElement {
 
     connectedCallback() {
         this.attachShadow({ mode: 'open' });
+        const isHorizontal = this.hasAttribute("horizontal");
         setTimeout(() => {
             this.shadowRoot.innerHTML = `
                 <style>
                     :host{
                         overflow: auto;
                     }
+                    .flex-row{
+                        display:flex;
+                        flex-direction: row;
+                    }
+                    .flex-col{
+                        display:flex;
+                        flex-direction: column;
+                    }
+                    .stick-top-left{
+                        background-color: white; 
+                        position: sticky; 
+                        top: 0; 
+                        left: 0; 
+                    }
                 </style>
-                <div id="container" style="display:flex; flex-direction: column;">
-                    <div id="button-container" style="width: 100%;background-color: white; position: sticky; top: 0; left: 0; border-bottom: 1px gray solid; padding-bottom: 1rem;">
-                        <div style="display:flex; flex-direction: row; white-space: nowrap; overflow: auto;">
+                <div id="container" class="${isHorizontal?'flex-row':'flex-col'}">
+                    <div style="padding-bottom: ${!isHorizontal?'1rem':''};">
+                        <div class="${isHorizontal?'flex-col':'flex-row'} stick-top-left" style="white-space: nowrap;overflow: auto; height: 100%; ${isHorizontal?'overflow-x:hidden':''} ">
                             <slot name="button"></slot>
                         </div>
                     </div>
-                    <div style="overflow-x: auto;">
-                        <slot class="panel" name="content"></slot>
+                    <div style="overflow-x: auto; padding-left:${isHorizontal?'1rem':''};">
+                        <slot name="content"></slot>
                     </div>
                 </div>
             `;
