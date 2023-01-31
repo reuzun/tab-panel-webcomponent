@@ -6,9 +6,7 @@ describe("Tab-Panel Component", () => {
     });
 
     it("Unit Test - setAttributesByInputs", () => {
-        let elem = {
-            style: {}
-        };
+        let elem = {style: {}};
         new TabPanel().setAttributesByInputs(elem, 100, 100);
         expect(elem.style.width).toBe(100);
         expect(elem.style.height).toBe(100);
