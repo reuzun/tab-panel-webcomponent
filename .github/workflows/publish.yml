@@ -2,7 +2,7 @@ name: Etab-panel-webcomponent
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "set-coverage-badge" ]
   pull_request:
     branches: [ "main" ]
 
