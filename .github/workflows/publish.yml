@@ -33,7 +33,20 @@ jobs:
       run: cat testresult.txt
    
     - name: Export Coverage
-      run: cat testresult.txt | tail -n2 | head -n1 | awk '{print $3}'
+      id: codecoverage
+      run: echo "codeCoverage=`cat testresult.txt | tail -n2 | head -n1 | awk '{print $3}'`" >> $GITHUB_OUTPUT
+      
+    - name: Create Awesome Badge
+      uses: schneegans/dynamic-badges-action@v1.6.0
+      with:
+        auth: ${{ secrets.GIST_SECRET }}
+        gistID: 63457e59c3284704de9892a683dce90c
+        filename: tabpanel.json
+        label: Code Coverage
+        message: ${{ steps.codecoverage.outputs.codeCoverage }}
+        minColorRange: 20
+        maxColorRange: 80
+        valColorRange: ${{ steps.codecoverage.outputs.codeCoverage }}
       
     - name: build code
       run: npm run build:prod
