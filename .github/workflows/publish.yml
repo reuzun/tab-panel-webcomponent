@@ -1,4 +1,4 @@
-name: Etab-panel-webcomponent
+name: tab-panel-webcomponent
 
 on:
   push:
