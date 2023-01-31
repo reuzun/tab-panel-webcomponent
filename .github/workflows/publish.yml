@@ -28,9 +28,12 @@ jobs:
       
     - name: Unit Test
       run: npm run test:ci > testresult.txt
-   
+      
     - name: Read Unit Test
       run: cat testresult.txt
+   
+    - name: Export Coverage
+      run: cat testresult.txt | tail -n2 | head -n1 | awk '{print $3}'
       
     - name: build code
       run: npm run build:prod
