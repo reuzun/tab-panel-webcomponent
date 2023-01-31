@@ -27,7 +27,10 @@ jobs:
       run: npm install
       
     - name: Unit Test
-      run: npm run test:ci
+      run: npm run test:ci > testresult.txt
+   
+    - name: Read Unit Test
+      run: cat testresult.txt
       
     - name: build code
       run: npm run build:prod
