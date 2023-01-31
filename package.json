@@ -9,6 +9,7 @@
     "test": "karma start",
     "test:ci": "karma start --browsers ChromeHeadless --singleRun",
     "publish": "semantic-release --ci false",
+    "publish-dry": "semantic-release --ci true",
     "commit": "cz",
     "publish:test": "npm pack"
   },
