@@ -2,7 +2,7 @@ name: tab-panel-webcomponent
 
 on:
   push:
-    branches: [ "main", "set-coverage-badge" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
