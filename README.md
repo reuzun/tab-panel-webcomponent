@@ -1,3 +1,4 @@
+[![tab-panel-webcomponent](https://github.com/reuzun/tab-panel-webcomponent/actions/workflows/publish.yml/badge.svg)](https://github.com/reuzun/tab-panel-webcomponent/actions/workflows/publish.yml) ![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/reuzun/63457e59c3284704de9892a683dce90c/raw/tabpanel.json)
 # TabPanel - Web Component
 
 A light-weight tab panel component with allowing limitless panels without any content restriction.
