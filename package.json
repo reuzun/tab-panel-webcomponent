@@ -3,12 +3,12 @@
   "version": "4.1.0",
   "description": "A native tab-panel web component.",
   "scripts": {
-    "postinstall": "husky install && husky install .husky",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
     "test": "karma start",
     "test:ci": "karma start --browsers ChromeHeadless --singleRun",
     "publish": "semantic-release --ci false",
+    "publish-dry": "semantic-release --ci true",
     "commit": "cz",
     "publish:test": "npm pack"
   },
