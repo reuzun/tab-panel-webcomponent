@@ -90,7 +90,7 @@ export class TabPanel extends HTMLElement {
                             <slot name="button"></slot>
                         </div>
                     </div>
-                    <div style="overflow-x: auto; height: 100%">
+                    <div style="height: 100%; width: 100%;">
                         <slot name="content"></slot>
                     </div>
                 </div>
