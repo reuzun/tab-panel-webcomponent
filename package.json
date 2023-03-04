@@ -3,7 +3,6 @@
   "version": "4.1.0",
   "description": "A native tab-panel web component.",
   "scripts": {
-    "postinstall": "husky install && husky install .husky",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
     "test": "karma start",
