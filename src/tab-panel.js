@@ -99,6 +99,7 @@ export class TabPanel extends HTMLElement {
             const container = this.shadowRoot.querySelector("#container");
             const panels = this.querySelectorAll("[slot='content']");
             const buttons = this.querySelectorAll("[slot='button']");
+            const oldDisplayStyles = [];
 
             this.setAttributesByInputs(
                 container,
@@ -106,18 +107,19 @@ export class TabPanel extends HTMLElement {
                 this.getAttribute("height") ?? "400px"
             );
 
-            this.attachEventToButtons(buttons, panels);
+            this.attachEventToButtons(buttons, panels, oldDisplayStyles);
         });
     }
 
-    attachEventToButtons(buttons, panels) {
+    attachEventToButtons(buttons, panels, oldDisplayStyles) {
         buttons
             .forEach((val, index) => {
+                oldDisplayStyles[index] = panels[index].style.display;
                 if (index != 0) {
                     panels[index].style.display = "none";
                 }
                 val.onclick = () => {
-                    this.lastPanelIndex = this.changeTab(panels, index, this.lastPanelIndex);
+                    this.lastPanelIndex = this.changeTab(panels, index, this.lastPanelIndex, oldDisplayStyles);
                 }
             });
     }
@@ -127,9 +129,9 @@ export class TabPanel extends HTMLElement {
         element.style.height = height;
     }
 
-    changeTab(panels, index, lastIndex) {
+    changeTab(panels, index, lastIndex, oldStyles) {
         panels[lastIndex].style.display = "none";
-        panels[index].style.display = "block";
+        panels[index].style.display = oldStyles[index];
         return index;
     }
 }

@@ -14,46 +14,53 @@ describe("Tab-Panel Component", () => {
 
     it("Unit Test - changeTab", () => {
         let elem1 = {
-            style: {}
+            style: {
+                display: "flex"
+            }
         };
         let elem2 = {
-            style: {}
+            style: {
+                display: "inline"
+            }
         };
 
         const panels = [elem1, elem2];
+        const oldStyles = [elem1.style, elem2.style]
 
-        const newSelectedIndex = new TabPanel().changeTab(panels, 1, 0);
+        const newSelectedIndex = new TabPanel().changeTab(panels, 1, 0, oldStyles);
         expect(newSelectedIndex).toBe(1);
         expect(panels[0].style.display).toBe('none');
-        expect(panels[1].style.display).toBe('block');
+        expect(panels[1].style.display).toBe(elem2.style);
     });
 
     it("Unit Test - attachEventToButtons - Panel Change Control", () => {
         let elem1 = {
             style: {
-                display: "block"
+                display: "flex"
             }
         };
         let elem2 = {
             style: {
-                display: "block"
+                display: "inine-block"
             }
         };
 
         let btn1 = document.createElement("button");
         let btn2 = document.createElement("button");
 
+        const oldStyles = [];
+
         const buttons = [btn1, btn2];
         const panels = [elem1, elem2];
 
-        new TabPanel().attachEventToButtons(buttons, panels);
-        expect(panels[0].style.display).toBe('block');
+        new TabPanel().attachEventToButtons(buttons, panels, oldStyles);
+        expect(panels[0].style.display).toBe(oldStyles[0]);
         expect(panels[1].style.display).toBe('none');
 
         btn2.click();
 
         expect(panels[0].style.display).toBe('none');
-        expect(panels[1].style.display).toBe('block');
+        expect(panels[1].style.display).toBe(oldStyles[1]);
     });
 
     it("Unit Test - connectedCallback", () => {
