@@ -97,17 +97,19 @@ export class TabPanel extends HTMLElement {
             `;
 
             const container = this.shadowRoot.querySelector("#container");
-            const panels = this.querySelectorAll("[slot='content']");
-            const buttons = this.querySelectorAll("[slot='button']");
-            const oldDisplayStyles = [];
-
             this.setAttributesByInputs(
                 container,
                 this.getAttribute("width") ?? "400px",
                 this.getAttribute("height") ?? "400px"
             );
 
-            this.attachEventToButtons(buttons, panels, oldDisplayStyles);
+            this.shadowRoot.querySelectorAll("slot")[0].addEventListener('slotchange', event => {
+                this.lastPanelIndex = 0;
+                const panels = this.querySelectorAll("[slot='content']");
+                const buttons = this.querySelectorAll("[slot='button']");
+                const oldDisplayStyles = [];
+                this.attachEventToButtons(buttons, panels, oldDisplayStyles);
+            });
         });
     }
 
