@@ -114,13 +114,13 @@ export class TabPanel extends HTMLElement {
     }
 
     attachEventToButtons(buttons, panels, oldDisplayStyles) {
-        buttons
+        panels
             .forEach((val, index) => {
                 oldDisplayStyles[index] = panels[index].style.display;
                 if (index != 0) {
                     panels[index].style.display = "none";
                 }
-                val.onclick = () => {
+                buttons[index].onclick = () => {
                     this.lastPanelIndex = this.changeTab(panels, index, this.lastPanelIndex, oldDisplayStyles);
                 }
             });
@@ -133,8 +133,15 @@ export class TabPanel extends HTMLElement {
 
     changeTab(panels, index, lastIndex, oldStyles) {
         panels[lastIndex].style.display = "none";
-        panels[index].style.display = oldStyles[index];
+        panels[index].style.display = oldStyles[index] == "none" ? "block" : oldStyles[index];
         return index;
+    }
+
+    setLastItemActive() {
+        const panels = this.querySelectorAll("[slot='content']");
+        const buttons = this.querySelectorAll("[slot='button']");
+
+        buttons[panels.length - 1].click();
     }
 }
 window.customElements.define('tab-panel', TabPanel);
