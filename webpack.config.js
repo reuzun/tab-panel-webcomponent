@@ -15,7 +15,7 @@ module.exports = {
                     mangle: {
                         properties: {
                             regex: /.*/,
-                            reserved: ["connectedCallback"]
+                            reserved: ["connectedCallback", "setLastItemActive"]
                         }
                     }
                 }
